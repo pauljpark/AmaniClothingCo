@@ -1,0 +1,46 @@
+body {
+
+}
+
+.shipping-tag {
+  text-align: center;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: grey;
+  color: pink
+}
+.nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 40%
+}
+
+.main-pic {
+  width: 100%
+}
+
+.description {
+  display: flex
+}
+
+.giraffe-pic {
+  width: 100%
+}
+
+
+.collections {
+  display: flex;
+}
+.collections-imgs {
+  width: 50%
+}
+
+.subscribe-sec {
+  display: flex;
+  justify-content: space-evenly;
+}
