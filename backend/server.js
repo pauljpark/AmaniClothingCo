@@ -32,6 +32,12 @@ app.use('/cart', CartRouter)
 
 app.post('/create-checkout-session', async (req, res) => {
     const session = await stripe.checkout.sessions.create({
+      allow_promotion_codes: 'true',
+      billing_address_collection: 'auto',
+      shipping_address_collection: 
+        {
+          allowed_countries: ["AC", "AD", "AE", "AF", "AG", "AI", "AL", "AM", "AO", "AQ", "US"]
+        },
       payment_method_types: ['card'],
       line_items: [
         {
@@ -46,8 +52,8 @@ app.post('/create-checkout-session', async (req, res) => {
         },
       ],
       mode: 'payment',
-      success_url: 'https://google.com/',
-      cancel_url: 'https://amazon.com/',
+      success_url: 'https://example.com/',
+      cancel_url: 'https://example.com/',
     });
   
     res.json({ id: session.id });

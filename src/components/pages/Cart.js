@@ -1,15 +1,19 @@
 import React from 'react'
 import axios from 'axios'
 import CartItem from './CartItem'
-import {loadStripe} from '@stripe/stripe-js'
+import { loadStripe } from "@stripe/stripe-js"
 
-const stripePromise = loadStripe('pk_test_51Hbvc1F6oI7ilvLjk9gEUmRvdtoB4oofPQ49JXEWNOguZgU9qhYhnfSPaTR48uO8GR5zkislJlkBPYeBDHejCO6n00VJ2g2EZ8')
+const promise = loadStripe("pk_test_51Hbvc1F6oI7ilvLjk9gEUmRvdtoB4oofPQ49JXEWNOguZgU9qhYhnfSPaTR48uO8GR5zkislJlkBPYeBDHejCO6n00VJ2g2EZ8")
 
 class Cart extends React.Component {
     constructor() {
         super() 
             this.state = {
-                cart: []
+                cart: [],
+                product: {
+                    name: "Order",
+                    price: 5.00
+                }
             }
     }
 
@@ -51,7 +55,7 @@ class Cart extends React.Component {
 
     handleClick = async (event) => {
         // Get Stripe.js instance
-        const stripe = await stripePromise;
+        const stripe = await promise;
     
         // Call your backend to create the Checkout Session
         const response = await fetch('http://localhost:5000/create-checkout-session', { method: 'POST' });
@@ -70,6 +74,7 @@ class Cart extends React.Component {
         }
     }
 
+
     render() {
         return (
             <div>
@@ -86,7 +91,7 @@ class Cart extends React.Component {
                     </ul>
                 ))}
                     <h2>Grand Total: ${this.grandTotal()}</h2>
-                    <button onClick={this.handleClick}>Checkout</button>
+                    <button onClick={this.handleClick}>Checkout!</button>
             </div>
         )
     }
