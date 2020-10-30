@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import CartItem from './CartItem'
 import { loadStripe } from "@stripe/stripe-js"
+import Footer from '../Footer'
 
 const promise = loadStripe("pk_test_51Hbvc1F6oI7ilvLjk9gEUmRvdtoB4oofPQ49JXEWNOguZgU9qhYhnfSPaTR48uO8GR5zkislJlkBPYeBDHejCO6n00VJ2g2EZ8")
 
@@ -92,6 +93,7 @@ class Cart extends React.Component {
                 ))}
                     <h2>Grand Total: ${this.grandTotal()}</h2>
                     <button onClick={this.handleClick}>Checkout!</button>
+                <Footer />
             </div>
         )
     }

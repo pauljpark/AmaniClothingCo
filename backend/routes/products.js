@@ -24,7 +24,8 @@ router.route('/add').post((req, res) => {
         description,
         price,
         qty,
-        date
+        date,
+        img
     })
 
     //saved to the MongoDB Atlas DB

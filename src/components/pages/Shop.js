@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import Footer from '../Footer'
 
 class ProductList extends React.Component{
     constructor() {
@@ -65,6 +66,7 @@ class ProductList extends React.Component{
                             )
                         })}
                     </div>
+                <Footer />
             </div>
         )
     }
