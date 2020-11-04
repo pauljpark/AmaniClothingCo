@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import CartItem from './CartItem'
 import { loadStripe } from "@stripe/stripe-js"
-import Footer from '../Footer'
+import Nav from '../Nav'
 
 const promise = loadStripe("pk_test_51Hbvc1F6oI7ilvLjk9gEUmRvdtoB4oofPQ49JXEWNOguZgU9qhYhnfSPaTR48uO8GR5zkislJlkBPYeBDHejCO6n00VJ2g2EZ8")
 
@@ -79,21 +79,23 @@ class Cart extends React.Component {
     render() {
         return (
             <div>
-                {this.state.cart.map((cartItem, id) => (
-                    <ul className='cart-items' key={id}>
-                        <CartItem 
-                            item={cartItem._id}
-                            updateQty={this.updateQty} 
-                            qty={cartItem.qty}
+                <Nav />
+                    <div className='cart'>
+                        {this.state.cart.map((cartItem, id) => (
+                            <ul className='cart-items' key={id}>
+                                <CartItem 
+                                    item={cartItem._id}
+                                    updateQty={this.updateQty} 
+                                    qty={cartItem.qty}
                             /* this is what passes all other metrics like name, descrip.etc
                             and you can use them in CartItem component */ 
-                            {...cartItem} />
-                        <button onClick={() => this.deleteCartItem(cartItem._id)}>Remove</button>
-                    </ul>
-                ))}
-                    <h2>Grand Total: ${this.grandTotal()}</h2>
+                                    {...cartItem} />
+                                <button onClick={() => this.deleteCartItem(cartItem._id)}>Remove</button>
+                            </ul>
+                        ))}
+                            <h2>Grand Total: ${this.grandTotal()}</h2>
                     <button onClick={this.handleClick}>Checkout!</button>
-                <Footer />
+                </div>
             </div>
         )
     }

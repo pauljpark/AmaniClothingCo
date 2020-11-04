@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import Nav from './components/Nav'
 import Home from './components/Home'
 import About from './components/pages/About'
 import Shop from './components/pages/Shop'
 import Ambassador from './components/pages/Ambassador'
 import FAQ from './components/pages/FAQ'
 import Cart from './components/pages/Cart'
+import Footer from './components/Footer'
 
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
@@ -14,8 +14,6 @@ function App() {
   return (
     <Router>
       <div>
-      <p className='shipping-tag'>free shipping on orders $75 or more</p>
-        <Nav />
           <Switch>
             <Route path='/' exact component={Home} />
             <Route path='/about' component={About} />
@@ -25,6 +23,7 @@ function App() {
             <Route path='/cart' component={Cart} />
           </Switch>
       </div>
+      <Footer />
     </Router>
   )
 }

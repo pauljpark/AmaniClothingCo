@@ -1,13 +1,19 @@
 import React from 'react'
 import ambassador from '../../img/ambassador.png'
-import Footer from '../Footer'
+import Nav from '../Nav'
 
 function Ambassador() {
     return (
-        <div className='ambassador'>
-            <h1>Join Our Team!</h1>
-            <img src={ambassador} alt="ambassador" />
-            <Footer />
+        <div>
+            <Nav />
+                <div className='ambassador'>
+                    <h1>Join Our Team!</h1>
+                        <hr />
+                            <img 
+                                className= 'ambassador-pic' 
+                                src={ambassador} 
+                                alt="ambassador"/>
+                    </div>
         </div>
     )
 }

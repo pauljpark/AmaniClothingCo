@@ -1,18 +1,23 @@
 import React from 'react'
-import main from '../img/main.png'
 import Description from './Description'
 import CollectionList from './CollectionList'
 import Subscribe from './Subscribe'
-import Footer from './Footer'
+import Nav from './Nav'
+import {Link} from 'react-router-dom'
 
 function Home() {
     return (
         <div>
-            <img src={main} alt='main here' className='main-pic' />
-            <Description />
-            <CollectionList />
-            <Subscribe />
-            <Footer />
+            <div className='nav-container'>
+                <p className='shipping-tag'>free shipping for orders $75 or more</p>
+                    <Nav />
+                <Link to='/shop' style={{ textDecoration: 'none', color: '#D78DA9' }}>
+                    <button className='shop-btn'>Shop now →</button>
+                </Link>
+            </div>
+                <Description />
+                <CollectionList />
+                <Subscribe />
         </div>
     )
 }

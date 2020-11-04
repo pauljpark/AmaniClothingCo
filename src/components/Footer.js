@@ -2,7 +2,7 @@ import React from 'react'
 
 function Footer() {
     return (
-        <div className='subscribe-sec'>
+        <div className='footer'>
             <div>
                 <p>Search</p>
                 <p>Track Your Order</p>
@@ -12,7 +12,7 @@ function Footer() {
                 <p>Instagram</p>
             </div>
             <div>
-                <p>2020 Amani Clothing Co</p>
+                <p>© 2020, Amani Clothing Co</p>
             </div>
         </div>
     )

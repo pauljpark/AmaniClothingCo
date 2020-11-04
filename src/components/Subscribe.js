@@ -2,9 +2,12 @@ import React from 'react'
 
 function Subscribe() {
     return (
-        <div>
+        <div className='subscribe'>
+            <div>
             <h2>Subscribe to us!</h2>
                 <p>Stay in the loop with the latest releases and discount codes</p>
+                    <hr />
+                    </div>
                     <form>
                         <input placeholder='Your email' />
                         <button>Subscribe</button>

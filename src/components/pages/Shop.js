@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import Footer from '../Footer'
+import Nav from '../Nav'
 
 class ProductList extends React.Component{
     constructor() {
@@ -53,20 +53,23 @@ class ProductList extends React.Component{
     render() {
         return (
             <div>
+                <Nav />
+            <div>
                 <h1>Products</h1>
-                    <div>
+                  <hr />
+                    <div className='products'>
                         {this.state.products.map(currentProduct => {
                             return (
                                 <div className='product' key={currentProduct._id}>
                                     <h3>{currentProduct.name}</h3>
                                     <p>{currentProduct.description}</p>
-                                    <p>{currentProduct.price}</p>
+                                    <p>${currentProduct.price}</p>
                                     <button onClick={() => {this.addToCart(currentProduct)}}>Add To Cart</button>
                                 </div>
                             )
                         })}
                     </div>
-                <Footer />
+                </div>
             </div>
         )
     }

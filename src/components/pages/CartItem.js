@@ -34,7 +34,7 @@ class CartItem extends React.Component {
         return (
             <div className='CartItem'>
                 <h3>{this.props.name}</h3>
-                <p>{this.props.price}</p>
+                <p>${this.props.price}</p>
             <p>Quantity</p>
                 <button onClick={this.handleSubtract} disabled={this.props.qty <= 0}>-</button>
             {this.props.qty}
