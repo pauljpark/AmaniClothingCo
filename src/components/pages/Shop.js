@@ -64,7 +64,11 @@ class ProductList extends React.Component{
                                     <h3>{currentProduct.name}</h3>
                                     <p>{currentProduct.description}</p>
                                     <p>${currentProduct.price}</p>
-                                    <button onClick={() => {this.addToCart(currentProduct)}}>Add To Cart</button>
+                                    <button 
+                                        className='add-btn'
+                                        onClick={() => {this.addToCart(currentProduct)}}>
+                                            Add to Cart
+                                    </button>
                                 </div>
                             )
                         })}

@@ -36,9 +36,18 @@ class CartItem extends React.Component {
                 <h3>{this.props.name}</h3>
                 <p>${this.props.price}</p>
             <p>Quantity</p>
-                <button onClick={this.handleSubtract} disabled={this.props.qty <= 0}>-</button>
+                <button 
+                    className='cart-btns'
+                    onClick={this.handleSubtract} 
+                    disabled={this.props.qty <= 0}>
+                    -
+                </button>
             {this.props.qty}
-                <button onClick={this.handleAdd}>+</button>
+                <button 
+                    className='cart-btns'
+                    onClick={this.handleAdd}>
+                        +
+                </button>
             </div>
         )
     }

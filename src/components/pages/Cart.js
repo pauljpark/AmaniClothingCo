@@ -3,6 +3,7 @@ import axios from 'axios'
 import CartItem from './CartItem'
 import { loadStripe } from "@stripe/stripe-js"
 import Nav from '../Nav'
+import {Link} from 'react-router-dom'
 
 const promise = loadStripe("pk_test_51Hbvc1F6oI7ilvLjk9gEUmRvdtoB4oofPQ49JXEWNOguZgU9qhYhnfSPaTR48uO8GR5zkislJlkBPYeBDHejCO6n00VJ2g2EZ8")
 
@@ -10,11 +11,7 @@ class Cart extends React.Component {
     constructor() {
         super() 
             this.state = {
-                cart: [],
-                product: {
-                    name: "Order",
-                    price: 5.00
-                }
+                cart: []
             }
     }
 
@@ -77,27 +74,44 @@ class Cart extends React.Component {
 
 
     render() {
-        return (
-            <div>
-                <Nav />
-                    <div className='cart'>
-                        {this.state.cart.map((cartItem, id) => (
-                            <ul className='cart-items' key={id}>
-                                <CartItem 
-                                    item={cartItem._id}
-                                    updateQty={this.updateQty} 
-                                    qty={cartItem.qty}
-                            /* this is what passes all other metrics like name, descrip.etc
-                            and you can use them in CartItem component */ 
-                                    {...cartItem} />
-                                <button onClick={() => this.deleteCartItem(cartItem._id)}>Remove</button>
-                            </ul>
-                        ))}
-                            <h2>Grand Total: ${this.grandTotal()}</h2>
-                    <button onClick={this.handleClick}>Checkout!</button>
+        if (this.state.cart[0] === undefined) {
+            return (
+                <div>
+                    <Nav />
+                    <h1>Your cart is empty!</h1>
+                    <Link to='/shop'>
+                    <button className='add-btn'>Go back to shopping</button>
+                </Link>
                 </div>
-            </div>
-        )
+            )
+        } else {
+            return (
+                <div>
+                    <Nav />
+                        <div className='cart'>
+                            {this.state.cart.map((cartItem, id) => (
+                                <p className='cart-items' key={id}>
+                                    <CartItem 
+                                        item={cartItem._id}
+                                        updateQty={this.updateQty} 
+                                        qty={cartItem.qty}
+                                /* this is what passes all other metrics like name, descrip.etc
+                                and you can use them in CartItem component */ 
+                                        {...cartItem} />
+                                    <button 
+                                        className='cart-btns'
+                                        onClick={() => this.deleteCartItem(cartItem._id)}>
+                                            remove
+                                    </button>
+                                </p>
+                            ))}
+                                <h2>Subtotal: ${this.grandTotal()}</h2>
+                            <button onClick={this.handleClick}>{'Check Out →'}</button>
+                    </div>
+                </div>
+            )
+        }
+
     }
 }
 

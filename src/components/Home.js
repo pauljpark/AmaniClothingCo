@@ -11,7 +11,7 @@ function Home() {
             <div className='nav-container'>
                 <p className='shipping-tag'>free shipping for orders $75 or more</p>
                     <Nav />
-                <Link to='/shop' style={{ textDecoration: 'none', color: '#D78DA9' }}>
+                <Link to='/shop'>
                     <button className='shop-btn'>Shop now →</button>
                 </Link>
             </div>
