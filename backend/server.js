@@ -48,7 +48,7 @@ app.post('/create-checkout-session', async (req, res) => {
             },
             unit_amount: 2000,
           },
-          quantity: 1,
+          quantity: 2,
         },
       ],
       mode: 'payment',

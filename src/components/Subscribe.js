@@ -1,6 +1,11 @@
 import React from 'react'
 
 function Subscribe() {
+
+    const submitEmail = (e) => {
+        e.preventDefault()
+    }
+
     return (
         <div className='subscribe'>
             <div>
@@ -8,7 +13,7 @@ function Subscribe() {
                 <p>Stay in the loop with the latest releases and discount codes</p>
                     <hr />
                     </div>
-                    <form>
+                    <form onSubmit={submitEmail}>
                         <input placeholder='Your email' />
                         <button>Subscribe</button>
                     </form>

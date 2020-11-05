@@ -5,7 +5,7 @@ function Nav() {
     if (window.location.href === 'http://localhost:3000/') {
         return (
             <nav className='nav-bar'>
-          <h3 style={{ fontWeight: 'bold', color: '#ffffff'}}>Amani Clothing Co Logo</h3>
+                <h3 style={{ fontWeight: 'bold', color: '#ffffff'}}>Amani Clothing Co Logo</h3>
             <ul className='nav-list'>
                 <Link to='/' style={{ fontWeight: 'bold', textDecoration: 'none', color: '#ffffff' }}>
                     <li className='nav-link'>Home</li>
@@ -29,7 +29,7 @@ function Nav() {
         </nav>
         )
     } else {
-    return (
+      return (
         <nav className='nav-bar'>
           <h3>Amani Clothing Co Logo</h3>
             <ul className='nav-list'>
