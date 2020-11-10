@@ -7,6 +7,9 @@ import Ambassador from './components/pages/Ambassador'
 import FAQ from './components/pages/FAQ'
 import Cart from './components/pages/Cart'
 import Footer from './components/Footer'
+import Success from './components/pages/Success'
+import Cancel from './components/pages/Cancel'
+
 
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
@@ -21,6 +24,8 @@ function App() {
             <Route path='/ambassador' component={Ambassador} />
             <Route path='/faq' component={FAQ} />
             <Route path='/cart' component={Cart} />
+            <Route path='/success' component={Success} />
+            <Route path='/cancel' component={Cancel} />
           </Switch>
       </div>
       <Footer />
