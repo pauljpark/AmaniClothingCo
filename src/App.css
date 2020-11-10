@@ -125,12 +125,15 @@ hr {
 .products {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin: 5rem
+  margin: 3rem;
 }
 .product {
-  padding: 4rem
+  padding: 4rem;
 }
-.add-btn {
+.product > img {
+  width: 100%;
+}
+.add-btn, .checkout-btn {
   background-color: #000000;
   color: #ffffff;
   border: none;

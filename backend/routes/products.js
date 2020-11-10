@@ -18,13 +18,15 @@ router.route('/add').post((req, res) => {
     const price = Number(req.body.price)
     const qty = Number(req.body.qty)
     const date = Date.parse(req.body.date)
+    const img = req.body.img
 
     const newProduct = new Product({
         name,
         description,
         price,
         qty,
-        date
+        date,
+        img
     })
 
     //saved to the MongoDB Atlas DB

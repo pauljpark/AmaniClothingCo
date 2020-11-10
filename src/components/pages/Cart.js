@@ -106,7 +106,11 @@ class Cart extends React.Component {
                                 </p>
                             ))}
                                 <h2>Subtotal: ${this.grandTotal()}</h2>
-                            <button onClick={this.handleClick}>{'Check Out →'}</button>
+                            <button 
+                                className='checkout-btn'
+                                onClick={this.handleClick}>
+                                    {'Check Out →'}
+                            </button>
                     </div>
                 </div>
             )

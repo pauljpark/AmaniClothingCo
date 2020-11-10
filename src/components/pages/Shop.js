@@ -64,6 +64,7 @@ class ProductList extends React.Component{
                                     <h3>{currentProduct.name}</h3>
                                     <p>{currentProduct.description}</p>
                                     <p>${currentProduct.price}</p>
+                                    <img src={currentProduct.img} alt='pic' />
                                     <button 
                                         className='add-btn'
                                         onClick={() => {this.addToCart(currentProduct)}}>

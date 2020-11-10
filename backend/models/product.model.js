@@ -8,6 +8,7 @@ const productSchema = new Schema({
     price: {type: Number, required: true},
     qty: {type: Number, required: true},
     date: {type: Date, required: true},
+    img: {type: String, required: true},
 }, {
     timestamps: true
 })
