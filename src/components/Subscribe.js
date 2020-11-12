@@ -14,8 +14,8 @@ function Subscribe() {
                     <hr />
                     </div>
                     <form onSubmit={submitEmail}>
-                        <input placeholder='Your email' />
-                        <button>Subscribe</button>
+                        <input type='text' placeholder='Your email' />
+                        <button className='sub-btn'>Subscribe</button>
                     </form>
         </div>
     )

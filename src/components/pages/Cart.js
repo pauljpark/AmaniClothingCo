@@ -56,7 +56,14 @@ class Cart extends React.Component {
         const stripe = await promise;
     
         // Call your backend to create the Checkout Session
-        const response = await fetch('http://localhost:5000/create-checkout-session', { method: 'POST' });
+        const response = await fetch('http://localhost:5000/create-checkout-session', 
+            { method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+                body: JSON.stringify(this.state.cart) 
+            }
+            );
     
         const session = await response.json();
 

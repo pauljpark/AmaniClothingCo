@@ -2,6 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
 const stripe = require('stripe')('sk_test_51Hbvc1F6oI7ilvLjRnfXZhiBo2umHT23IwSE9hXhXDSDnTDx4ePhv8AwEJZvnlabV7uzVJUGdZnox0ghY0gUwT9J00n93YwtH1')
+const bodyParser = require('body-parser')
 
 require('dotenv').config()
 
@@ -11,6 +12,8 @@ const port = process.env.PORT || 5000
 //middleware
 app.use(cors())
 app.use(express.json())
+app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.json())
 
 const uri = process.env.ATLAS_URI
 mongoose.connect(
@@ -30,6 +33,7 @@ app.use('/products', ProductsRouter)
 app.use('/cart', CartRouter)
 
 app.post('/create-checkout-session', async (req, res) => {
+
   const session = await stripe.checkout.sessions.create({
     allow_promotion_codes: 'true',
     billing_address_collection: 'auto',
@@ -43,11 +47,12 @@ app.post('/create-checkout-session', async (req, res) => {
         price_data: {
           currency: 'usd',
           product_data: {
-            name: 'Aztec Longsleeve',
+            name: 'item name here'/*req.body.forEach(ele => ele.name)*/,
+            description: 'size here'
           },
-          unit_amount: 2000,
+          unit_amount: 2000 /*req.body.forEach(ele => ele.price)*/,
         },
-        quantity: 2,
+        quantity: 1 /*req.body.forEach(ele => ele.qty)*/,
       },
     ],
     mode: 'payment',

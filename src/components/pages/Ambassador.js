@@ -19,35 +19,43 @@ function Ambassador() {
                                 src={ambassador} 
                                 alt="ambassador"/>
                     </div>
-                    <form onSubmit={onFormSubmit}>
-                        Name <input 
+                    <form onSubmit={onFormSubmit} className='form-container'>
+                        Name 
+                          <br /> 
+                            <input 
                                 placeholder='First'
                                 value=''
                                 type='text'
                               />
+                              <br />
                               <input 
                                 placeholder='Last'
                                 value=''  
                                 type='text'
                               />
                               <br />
-                        Email <input 
+                        Email 
+                          <br />
+                            <input 
                                 value=''
                                 type='text'
                               />
                               <br />
-                        Birth Date(MMDDYYYY)  <input 
+                        Birth Date (MM/DD/YYYY)  
+                          <br />
+                            <input 
                                                     value=''
                                                     type='number'
                                                 />
                                 <br />
                         Please tell us why you would like to join the team!
+                          <br />
                             <input 
                                 value=''
                                 type='text'
                             />
                                 <br />
-                                    <button>Submit</button>
+                                    <button className='form-btn'>Submit</button>
                     </form>
         </div>
     )

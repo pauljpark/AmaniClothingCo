@@ -48,7 +48,6 @@ class ProductList extends React.Component{
             this.setState({cart: response.data})
         })
     }
-    
 
     render() {
         return (
@@ -63,8 +62,8 @@ class ProductList extends React.Component{
                                 <div className='product' key={currentProduct._id}>
                                     <h3>{currentProduct.name}</h3>
                                     <p>{currentProduct.description}</p>
-                                    <p>${currentProduct.price}</p>
                                     <img src={currentProduct.img} alt='pic' />
+                                    <p>${currentProduct.price}</p>
                                     <button 
                                         className='add-btn'
                                         onClick={() => {this.addToCart(currentProduct)}}>
