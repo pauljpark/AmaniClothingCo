@@ -17,8 +17,8 @@ Runs the server in the backend and connects to the MongoDB database
 
 In the server directory, create a dotenv file with this line:
 
-ATLAS_URI=mongodb+srv://PaulyP:password1234@myclutster.niffi.mongodb.net/amaniClothingItems?retryWrites=true&w=majority
-
+```ATLAS_URI=mongodb+srv://PaulyP:password1234@myclutster.niffi.mongodb.net/amaniClothingItems?retryWrites=true&w=majority
+```
 
 
 
