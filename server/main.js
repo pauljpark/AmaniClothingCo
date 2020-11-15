@@ -1,7 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
+const stripe = require('stripe')('sk_test_51Hbvc1F6oI7ilvLjRnfXZhiBo2umHT23IwSE9hXhXDSDnTDx4ePhv8AwEJZvnlabV7uzVJUGdZnox0ghY0gUwT9J00n93YwtH1')
 const bodyParser = require('body-parser')
 
 require('dotenv').config()
@@ -42,19 +42,19 @@ app.post('/create-checkout-session', async (req, res) => {
         allowed_countries: ["AC", "AD", "AE", "AF", "AG", "AI", "AL", "AM", "AO", "AQ", "US"]
       },
     payment_method_types: ['card'],
-    line_items: [
+    line_items: req.body.map(ele => ([
       {
         price_data: {
           currency: 'usd',
           product_data: {
-            name: 'item name here'/*req.body.forEach(ele => ele.name)*/,
-            description: 'size here'
+            name: ele.name,
+            description: ele.description
           },
-          unit_amount: 2000 /*req.body.forEach(ele => ele.price)*/,
+          unit_amount: ele.price,
         },
-        quantity: 1 /*req.body.forEach(ele => ele.qty)*/,
+        quantity: ele.quantity,
       },
-    ],
+    ])),
     mode: 'payment',
     success_url: 'http://localhost:3000/success/',
     cancel_url: 'http://localhost:3000/cancel/',
