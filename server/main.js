@@ -34,6 +34,21 @@ app.use('/cart', CartRouter)
 
 app.post('/create-checkout-session', async (req, res) => {
 
+  stuff = req.body.map(ele => (
+    {
+      price_data: {
+        currency: 'usd',
+        product_data: {
+          name: ele.name,
+          //description: 'size can go here'
+        },
+        unit_amount: ele. price * 100
+      },
+      quantity: ele.qty
+    })
+  )
+  console.log(stuff)
+
   const session = await stripe.checkout.sessions.create({
     allow_promotion_codes: 'true',
     billing_address_collection: 'auto',
@@ -42,19 +57,7 @@ app.post('/create-checkout-session', async (req, res) => {
         allowed_countries: ["AC", "AD", "AE", "AF", "AG", "AI", "AL", "AM", "AO", "AQ", "US"]
       },
     payment_method_types: ['card'],
-    line_items: req.body.map(ele => ([
-      {
-        price_data: {
-          currency: 'usd',
-          product_data: {
-            name: ele.name,
-            description: ele.description
-          },
-          unit_amount: ele.price,
-        },
-        quantity: ele.quantity,
-      },
-    ])),
+    line_items: stuff,
     mode: 'payment',
     success_url: 'http://localhost:3000/success/',
     cancel_url: 'http://localhost:3000/cancel/',
