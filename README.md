@@ -1,6 +1,6 @@
 ## Full Stack E-Commerce Web Application
 
-REactJS, MongoDB, JavaScript, Express, and Stripe
+ReactJS, MongoDB, JavaScript, Express, and Stripe
 
 In the main project directory, you can run:
 
