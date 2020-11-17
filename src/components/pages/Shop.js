@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import Nav from '../Nav'
+import { URL } from '../../config'
 
 class ProductList extends React.Component{
     constructor() {
@@ -14,7 +15,7 @@ class ProductList extends React.Component{
 
     componentDidMount() {
         axios.all([
-            axios.get('http://localhost:5000/products/')
+            axios.get(`${URL}/products/`)
             .then(response  => {
                 this.setState({products: response.data})
             })
@@ -22,7 +23,7 @@ class ProductList extends React.Component{
                 console.log(error)
             }),
 
-            axios.get('http://localhost:5000/cart/')
+            axios.get(`${URL}/cart/`)
             .then(response  => {
                 this.setState({cart: response.data})
             })
@@ -39,11 +40,11 @@ class ProductList extends React.Component{
         //if theres no cart item with the e.name, it will return a blank array
         //if thats the case, add the product to cart
         if (product[0] === undefined) {
-            axios.post('http://localhost:5000/cart/add', e)
+            axios.post(`${URL}/cart/add`, e)
             .then(res => console.log(res.data))
         }
         //get cart items and rerender new state with the product that was added to the cart
-        axios.get('http://localhost:5000/cart/')
+        axios.get(`${URL}/cart/`)
         .then(response  => {
             this.setState({cart: response.data})
         })

@@ -4,6 +4,7 @@ import CartItem from './CartItem'
 import { loadStripe } from "@stripe/stripe-js"
 import Nav from '../Nav'
 import {Link} from 'react-router-dom'
+import { URL } from '../../config'
 
 const promise = loadStripe("pk_test_51Hbvc1F6oI7ilvLjk9gEUmRvdtoB4oofPQ49JXEWNOguZgU9qhYhnfSPaTR48uO8GR5zkislJlkBPYeBDHejCO6n00VJ2g2EZ8")
 
@@ -16,7 +17,7 @@ class Cart extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/cart/')
+        axios.get(`${URL}/cart/`)
         .then(response => {
             this.setState({cart: response.data})
         })
@@ -26,7 +27,7 @@ class Cart extends React.Component {
     }
 
     deleteCartItem(id) {
-        axios.delete('http://localhost:5000/cart/' + id)
+        axios.delete(`${URL}/cart/` + id)
             .then(res => console.log(res.data))
 
         this.setState({
@@ -56,7 +57,7 @@ class Cart extends React.Component {
         const stripe = await promise;
     
         // Call your backend to create the Checkout Session
-        const response = await fetch('http://localhost:5000/create-checkout-session', 
+        const response = await fetch(`${URL}/create-checkout-session`, 
             { method: 'POST',
               headers: {
                   'Content-Type': 'application/json',

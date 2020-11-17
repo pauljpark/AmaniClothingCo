@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.55426246.chunk.css",
+    "main.js": "/static/js/main.4fe12bb1.chunk.js",
+    "main.js.map": "/static/js/main.4fe12bb1.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.5b816821.js",
+    "runtime-main.js.map": "/static/js/runtime-main.5b816821.js.map",
+    "static/js/2.a6b96747.chunk.js": "/static/js/2.a6b96747.chunk.js",
+    "static/js/2.a6b96747.chunk.js.map": "/static/js/2.a6b96747.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.4ea317e1e43c1b07aff0b1c9624fcee7.js": "/precache-manifest.4ea317e1e43c1b07aff0b1c9624fcee7.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.55426246.chunk.css.map": "/static/css/main.55426246.chunk.css.map",
+    "static/js/2.a6b96747.chunk.js.LICENSE.txt": "/static/js/2.a6b96747.chunk.js.LICENSE.txt",
+    "static/media/ambassador.png": "/static/media/ambassador.69867546.png",
+    "static/media/giraffe.png": "/static/media/giraffe.46c6b389.png",
+    "static/media/hoodies.png": "/static/media/hoodies.ea07ff5b.png",
+    "static/media/longsleeves.png": "/static/media/longsleeves.eb7ce565.png",
+    "static/media/App.css": "/static/media/main.655dc893.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5b816821.js",
+    "static/js/2.a6b96747.chunk.js",
+    "static/css/main.55426246.chunk.css",
+    "static/js/main.4fe12bb1.chunk.js"
+  ]
+}
