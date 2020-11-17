@@ -15,7 +15,8 @@ app.use(express.json())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
 
-const uri = process.env.ATLAS_URI
+const uri = 'mongodb+srv://PaulyP:password1234@myclutster.niffi.mongodb.net/amaniClothingItems?retryWrites=true&w=majority'
+
 mongoose.connect(
     uri, 
     { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true },
