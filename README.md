@@ -27,7 +27,7 @@ Runs the server in the backend
 In the server directory, create a .env file with this line (connects to the MongoDB database):
 
 ```
-ATLAS_URI_GOES_HERE
+ATLAS_URI=mongodb+srv://PaulyP:password1234@myclutster.niffi.mongodb.net/amaniClothingItems?retryWrites=true&w=majority
 ```
 
 
