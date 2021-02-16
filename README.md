@@ -20,11 +20,9 @@ Then `cd server` and run:
 
 ### `npm install`
 
-### `nodemon`
+### `nodemon` : Runs the server in the backend
 
-Runs the server in the backend and connects to the MongoDB database
-
-In the server directory, create a .env file with this line:
+In the server directory, create a .env file with this line (connects to the MongoDB database):
 
 ```
 ATLAS_URI_GOES_HERE
