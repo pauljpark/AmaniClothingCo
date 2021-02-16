@@ -10,7 +10,7 @@ Clone this repository. Node and npm must be installed globally on your machine
 
 In the main project directory, run:
 
-### npm install
+### `npm install`
 
 ### `npm start`
 
@@ -18,7 +18,7 @@ Runs the app in the development mode on [http://localhost:3000](http://localhost
 
 Then `cd server` and run:
 
-### npm install
+### `npm install`
 
 ### `nodemon`
 
