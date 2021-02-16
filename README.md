@@ -20,7 +20,9 @@ Then `cd server` and run:
 
 ### `npm install`
 
-### `nodemon` : Runs the server in the backend
+### `nodemon`
+
+Runs the server in the backend
 
 In the server directory, create a .env file with this line (connects to the MongoDB database):
 
