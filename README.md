@@ -2,8 +2,6 @@
 
 ReactJS, MongoDB, JavaScript, Express, and Stripe
 
-## `Open the terminal`
-
 In the main project directory, you can run:
 
 ### `npm start`
