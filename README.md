@@ -1,6 +1,8 @@
 ## Full Stack E-Commerce Web Application
 
-ReactJS, MongoDB, JavaScript, Express, and Stripe
+Amani Clothing Co is a full-stack ecommerce web application that runs on ReactJS, MongoDB, JavaScript, Express, and Stripe
+
+
 
 In the main project directory, you can run:
 
