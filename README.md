@@ -13,12 +13,12 @@ In the server folder, you can run:
 
 ### `nodemon`
 
-Runs the server in the backend and connects to the MongoDB database
+Runs the server in the backend and connects to the MongoDB database  `test`
 
 In the server directory, create a dotenv file with this line:
 
 ```
-ATLAS_URI=mongodb+srv://PaulyP:password1234@myclutster.niffi.mongodb.net/amaniClothingItems?retryWrites=true&w=majority
+ATLAS_URI_GOES_HERE
 ```
 
 
