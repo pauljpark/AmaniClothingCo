@@ -14,7 +14,7 @@ In the main project directory, run:
 
 ### `npm start`
 
-Runs the app in the development mode on [http://localhost:3000](http://localhost:3000).
+Runs the app in the development mode on [http://localhost:3000](http://localhost:3000)
 
 Then `cd server` and run:
 
