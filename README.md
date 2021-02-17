@@ -1,6 +1,6 @@
-## Full Stack E-Commerce Web Application
+## Amani Clothing Co 
 
-Amani Clothing Co is a full-stack ecommerce web application that runs on ReactJS, MongoDB, Node, Express, and StripeJS
+A full-stack ecommerce web application that is built on ReactJS, MongoDB, Node, Express, and StripeJS
 
 Create new products, view all products currently inside the catalog, update existing products, and delete products through the admin portal http://localhost:3000/admin
 
