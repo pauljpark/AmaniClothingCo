@@ -1,25 +1,31 @@
-## Full Stack E-Commerce Web Application
+## Amani Clothing Co 
 
-ReactJS, MongoDB, JavaScript, Express, and Stripe
+A full-stack ecommerce web application that is built on ReactJS, MongoDB, Node, Express, and StripeJS
 
-In the main project directory, you can run:
+Create new products, view all products currently inside the catalog, update existing products, and delete products through the admin portal http://localhost:3000/admin
+
+### Installation and Setup Instructions
+
+Clone this repository. Node and npm must be installed globally on your machine
+
+In the main project directory, run:
+
+### `npm install`
 
 ### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Runs the app in the development mode on [http://localhost:3000](http://localhost:3000)
 
-In the server folder, you can run:
+Then `cd server` and run:
+
+### `npm install`
 
 ### `nodemon`
 
-Runs the server in the backend and connects to the MongoDB database
+Runs the server in the backend
 
-In the server directory, create a dotenv file with this line:
+In the server directory, create a .env file with this line (connects to the MongoDB database):
 
 ```
-ATLAS_URI=mongodb+srv://PaulyP:password1234@myclutster.niffi.mongodb.net/amaniClothingItems?retryWrites=true&w=majority
+ATLAS_URI_GOES_HERE
 ```
-
-
-

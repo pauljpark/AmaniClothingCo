@@ -9,7 +9,9 @@ import Cart from './components/pages/Cart'
 import Footer from './components/Footer'
 import Success from './components/pages/Success'
 import Cancel from './components/pages/Cancel'
-
+import Admin from './admin/admin'
+import Add from './admin/add'
+import Edit from './admin/edit'
 
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
@@ -26,9 +28,12 @@ function App() {
             <Route path='/cart' component={Cart} />
             <Route path='/success' component={Success} />
             <Route path='/cancel' component={Cancel} />
+            <Route path='/admin' component={Admin} />
+            <Route path='/add' component={Add} />
+            <Route path='/edit/:id' component={Edit} />
           </Switch>
+        <Footer />
       </div>
-      <Footer />
     </Router>
   )
 }

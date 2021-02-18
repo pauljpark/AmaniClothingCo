@@ -17,7 +17,7 @@ class Cart extends React.Component {
     }
 
     componentDidMount() {
-        axios.get(`${URL}/cart/`)
+        axios.get(`http://localhost:5000/cart/`)
         .then(response => {
             this.setState({cart: response.data})
         })
@@ -27,7 +27,7 @@ class Cart extends React.Component {
     }
 
     deleteCartItem(id) {
-        axios.delete(`${URL}/cart/` + id)
+        axios.delete(`http://localhost:5000/cart/` + id)
             .then(res => console.log(res.data))
 
         this.setState({
@@ -57,7 +57,7 @@ class Cart extends React.Component {
         const stripe = await promise;
     
         // Call your backend to create the Checkout Session
-        const response = await fetch(`${URL}/create-checkout-session`, 
+        const response = await fetch(`http://localhost:5000/create-checkout-session`, 
             { method: 'POST',
               headers: {
                   'Content-Type': 'application/json',
@@ -117,7 +117,7 @@ class Cart extends React.Component {
                             <button 
                                 className='checkout-btn'
                                 onClick={this.handleClick}>
-                                    {'Check Out →'}
+                                    Check Out →
                             </button>
                     </div>
                 </div>
