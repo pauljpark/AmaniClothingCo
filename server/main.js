@@ -1,7 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
-const stripe = require('stripe')('sk_test_51Hbvc1F6oI7ilvLjRnfXZhiBo2umHT23IwSE9hXhXDSDnTDx4ePhv8AwEJZvnlabV7uzVJUGdZnox0ghY0gUwT9J00n93YwtH1')
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
 const bodyParser = require('body-parser')
 
 require('dotenv').config()

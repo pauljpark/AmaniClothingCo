@@ -1,7 +1,7 @@
 import React from 'react'
 
 function Footer() {
-    if (window.location.pathname === '/admin' || '/edit') return null
+    if ((window.location.pathname === '/admin') || (window.location.pathname === '/edit')) return null
     return (
         <div className='footer'>
             <div>
