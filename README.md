@@ -24,8 +24,10 @@ Then `cd server` and run:
 
 Runs the server in the backend
 
-In the server directory, create a .env file with this line (connects to the MongoDB database):
+To obtain a connection string, please follow the instructions here: https://gist.github.com/singhayushh/426f10353a8051593828e92c139ebdbc
+
+In the server directory, create a .env file with your new connection string (connects to your MongoDB database):
 
 ```
-ATLAS_URI_GOES_HERE
+ATLAS_URI=YOUR_NEW_CONNECTION_STRING
 ```
