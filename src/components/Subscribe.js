@@ -4,6 +4,7 @@ function Subscribe() {
 
     const submitEmail = (e) => {
         e.preventDefault()
+
     }
 
     return (
@@ -15,7 +16,7 @@ function Subscribe() {
                     </div>
                     <form onSubmit={submitEmail}>
                         <input type='text' placeholder='Your email' />
-                        <button className='sub-btn'>Subscribe</button>
+                        <input className= 'sub-btn' type='submit' value='Submit' />
                     </form>
         </div>
     )

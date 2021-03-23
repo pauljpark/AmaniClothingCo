@@ -5,7 +5,7 @@ router.route('/').get((req, res) => {
     //Mongoose method, 'find' method returns a promise
     //After it finds,
     Cart.find()
-    //then get all exercises and return exercises in json format
+    //then get all cart items and return them in json format
     .then(cartItems => res.json(cartItems))
     //if error, return status 400 with error
     .catch(err => res.status(400).json('Error: ' + err))
@@ -30,7 +30,7 @@ router.route('/add').post((req, res) => {
     //saved to the MongoDB Atlas DB
     newCart.save()
     .then(() => res.json('Cart item added!'))
-    .catch(err => res.status(400). json('Error: ' + err))
+    .catch(err => res.status(400).json('Error: ' + err))
 })
 
 router.route('/update/:id').post((req, res) => {
